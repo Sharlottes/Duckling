@@ -12,15 +12,12 @@ import { Link, useParams } from "react-router-dom";
 import { RootState } from "@react-three/fiber";
 import { overlays } from "@/utils/overlays";
 import mergeImages from "merge-images";
-import { Pica } from "@/lib/pica";
 import axios from "axios";
 
 import * as styles from "./page.css";
 import { button } from "../deco/page.css";
 import AlertModal from "@/components/modal/AlertModal";
 
-const WIDTH = 286,
-  HEIGHT = 508;
 export default function SharePage() {
   const { userID } = useParams();
 
@@ -81,7 +78,7 @@ export default function SharePage() {
         </Link>
       </Header>
       <div className={styles.pageContainer}>
-        <div className={styles.canvasContainer} style={{ width: WIDTH, height: HEIGHT }}>
+        <div className={styles.canvasContainer}>
           <img src="/img/share-background-green.png" alt="" className={styles.backgroundImage} />
           <AvatarCanvas ref={rootStateRef}>
             <AvatarModelGroup userId={userID} position={[0, -0.05, 0]} />
